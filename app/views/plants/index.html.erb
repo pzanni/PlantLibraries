@@ -1,0 +1,21 @@
+<h1>All plants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Created</th>
+    <th>Description</th>
+  </tr>
+
+  <tbody>
+    <% @plants.each do |plant| %>
+      <tr>
+        <td><%= plant.name %></td>
+        <td><%= plant.type %></td>
+        <td><%= plant.created_at %></td>
+        <td><%= plant.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

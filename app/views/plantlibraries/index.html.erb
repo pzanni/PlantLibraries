@@ -1,0 +1,17 @@
+<h1>All plantlibraries</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Created</th>
+  </tr>
+
+  <tbody>
+    <% @plantlibraries.each do |plantlibrary| %>
+      <tr>
+        <td><%= link_to plantlibrary.name, plantlibrary%></td>
+        <td><%= plantlibrary.created_at.strftime("%d.%m.%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -1,0 +1,18 @@
+<%= link_to 'Back', plantlibraries_path, class: 'btn btn-primary' %>
+<h1> <%= @plantlibrary.name %> </h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Added</th>
+  </tr>
+
+  <tbody>
+    <% @plantlibrary.plants.each do |plant| %>
+      <tr>
+        <td><%= link_to plant.name, plant %></td>
+        <td><%= plant.created_at.strftime("%d.%m.%Y") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
