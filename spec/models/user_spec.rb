@@ -13,10 +13,4 @@ RSpec.describe User, type: :model do
     expect(user).not_to be_valid
     expect(User.count).to eq(0)
   end
-
-  it "creates plantlibrary to user" do
-  	user = User.create username:"Pekka", password:"Secret1", password_confirmation:"Secret1"
-  	expect(user.plantlibrary.name).to eq("My plantlibrary")
-
-  end
 end
