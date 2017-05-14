@@ -11,12 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170414222926) do
+ActiveRecord::Schema.define(version: 20170514160522) do
+
+  create_table "plantclubs", force: :cascade do |t|
+    t.string  "name"
+    t.integer "user_id"
+  end
 
   create_table "plantlibraries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
   create_table "plants", force: :cascade do |t|
@@ -28,12 +34,20 @@ ActiveRecord::Schema.define(version: 20170414222926) do
     t.integer  "plantlibrary_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string  "content"
+    t.integer "plant_id"
+    t.integer "plantlibrary_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "password"
     t.integer  "plantclub_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
+    t.string   "password"
+    t.integer  "plantlibrary_id"
   end
 
 end

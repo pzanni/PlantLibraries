@@ -1,0 +1,8 @@
+<h1> <%= @plantclub.name %> </h1>
+
+<% if current_user != nil %>
+	join club
+<% end %>
+
+
+<%= link_to 'Back', plantclubs_path %>

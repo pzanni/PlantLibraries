@@ -1,13 +1,27 @@
 Rails.application.routes.draw do
+  resources :posts
+  resources :plantclubs
+  get 'post_controller/new'
+
+  get 'post_controller/ceate'
+
+  get 'plantclub_controller/new'
+
+  get 'plantclub_controller/create'
+
   resources :users
   resources :plants
   resources :plantlibraries
+  resource :session, only: [:new, :create, :destroy]
   
   root 'plantlibraries#index'
-  get 'signup', to: 'users#new'
-  get 'signin', to: 'sessions#new'
-  
+  get 'register', to: 'users#new'
+  get 'login', to: 'sessions#new'
+  get 'auth/:provider/callback', to: 'sessions#create_oauth'
 
+  post 'login', to: 'sessions#create'
+  
+  delete 'logout', to: 'sessions#destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

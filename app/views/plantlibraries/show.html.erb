@@ -1,7 +1,8 @@
 <%= link_to 'Back', plantlibraries_path, class: 'btn btn-primary' %>
 <h1> <%= @plantlibrary.name %> </h1>
+<h4> By user: <%= link_to @plantlibrary.user.username, @plantlibrary.user %> </h4>
 
-<table>
+<table class="table table-hover">
   <tr>
     <th>Name</th>
     <th>Added</th>
@@ -12,7 +13,14 @@
       <tr>
         <td><%= link_to plant.name, plant %></td>
         <td><%= plant.created_at.strftime("%d.%m.%Y") %></td>
+        <% if current_user == @plantlibrary.user %>
+          <td> <%= link_to 'Edit', edit_plant_path %> </td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+<% if current_user == @plantlibrary.user %>
+  <%= link_to 'New plant', new_plant_path %>
+<% end %>

@@ -1,0 +1,19 @@
+<% provide(:title, "Log in") %>
+
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+
+    <h1>Log in</h1>
+
+    <%= form_tag session_path do %>
+      Username:
+      <%= text_field_tag :username, params[:username], class: 'form-control' %>
+      <p></p>
+      Password:
+      <%= password_field_tag :password, params[:password], class: 'form-control' %>
+      <p></p>
+      <%= submit_tag "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+  </div>
+</div>

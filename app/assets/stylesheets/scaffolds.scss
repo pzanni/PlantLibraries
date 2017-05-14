@@ -1,9 +1,26 @@
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: #FFFFFF;
+  color: #554C00;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+}
+
+nav {
+  background-color: #A5DF99 !important;
+  color: #000000 !important;
+}
+
+.table-hover {
+  
+}
+
+.btn-primary {
+
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
 }
 
 p, ol, ul, td {
@@ -19,15 +36,14 @@ pre {
 }
 
 a {
-  color: #000;
+  color: #554C00;
 
   &:visited {
     color: #666;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: #000;
   }
 }
 
